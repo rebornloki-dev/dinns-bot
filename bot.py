@@ -10,6 +10,7 @@ from database import db, User, Submission, PenaltyLog
 from ranking import RankManager
 from scoring import AnimationScorer
 from utils import AnimationProcessor
+from pathlib import Path
 
 # Initialize
 Config.validate()
