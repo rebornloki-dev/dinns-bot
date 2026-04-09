@@ -8,7 +8,7 @@ from config import Config
 class AnimationScorer:
     def __init__(self):
         self.client = Groq(api_key=Config.GROQ_API_KEY)
-        self.model = "llama-3.2-11b-vision-preview"  # Vision-capable model
+        self.model = "meta-llama/llama-4-scout-17b-16e-instruct"  # Vision-capable model
     
     def encode_image(self, image_path: str) -> str:
         with open(image_path, "rb") as f:
@@ -46,7 +46,7 @@ class AnimationScorer:
                 - Overall: weighted combination
                 
                 Dinns calculation: Base 1400 + (avg_score * 86). Max ~10000.
-                Be strict: average submissions should score 1400-3000.
+                Be strict but a little generous: average submissions should score 1400-3000
                 Professional work: 4000-7000.
                 Exceptional work: 7000+."""
             }
